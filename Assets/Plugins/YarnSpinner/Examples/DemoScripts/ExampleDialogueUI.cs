@@ -46,18 +46,14 @@ namespace Yarn.Unity.Example
         public static UnityEvent onNewNode = new UnityEvent();
 
         [SerializeField]
-        GameObject messageInput, closeChatButton, frame, chatsMenu;
-
-        [SerializeField]
-        GameObject[] aiMessages;
-
-        [SerializeField]
-        Text[] playerMessages;
-
+        GameObject messageInput, closeChatButton, frame, chatsMenu, aiBubble, playerBubble, scrollRect;
+        
         [SerializeField]
         AudioClip[] clickSounds;
 
         public delegate void SaveDialogueMethod(List<string>[] messages, string name, List<string> nodes);
+
+        GameObject currentAIBubble, currentPlayerBubble;
 
         SaveDialogueMethod saveMethod;
 
@@ -69,6 +65,8 @@ namespace Yarn.Unity.Example
 
         List<string>[] currentConversation = new List<string>[2];
 
+        List<GameObject> chatBubbles;
+
         public List<string>[] CurrentConversation
         {
             set { this.currentConversation = value; }
@@ -78,7 +76,6 @@ namespace Yarn.Unity.Example
         /** This object will be enabled when conversation starts, and 
          * disabled when it ends.
          */
-        GameObject dialogueContainer;
 
         /// The UI element that displays lines
         public Text lineText;
@@ -121,10 +118,6 @@ namespace Yarn.Unity.Example
         void Awake()
         {
             // Start by hiding the container, line and option buttons
-            dialogueContainer = aiMessages[0];
-
-            if (dialogueContainer != null)
-                dialogueContainer.SetActive(false);
 
             messageInput.gameObject.SetActive(false);
 
@@ -142,6 +135,20 @@ namespace Yarn.Unity.Example
             onNewNode.AddListener(NewNode);
         }
 
+        GameObject NewBubble(GameObject bubblePrefab, string name)
+        {
+            foreach(GameObject bubble in chatBubbles)
+            {
+                bubble.transform.position = new Vector3(bubble.transform.position.x, bubble.transform.position.y + 70f, bubble.transform.position.z);
+            }
+            GameObject newBubble = Instantiate(bubblePrefab, scrollRect.transform, false);
+            chatBubbles.Add(newBubble);
+            lineText = newBubble.transform.Find("MessageText").GetComponent<Text>();
+            newBubble.transform.Find("NameText").GetComponent<Text>().text = name;
+            print(name);
+            return newBubble;
+        }
+
         void NewNode()
         {
             visitedNodes.Add(GetComponent<DialogueRunner>().currentNodeName);
@@ -151,7 +158,8 @@ namespace Yarn.Unity.Example
         public override IEnumerator RunLine(Yarn.Line line)
         {
             // Show the text
-            lineText.gameObject.SetActive(true);
+            currentAIBubble = NewBubble(aiBubble, "test");
+            //lineText.gameObject.SetActive(true);
 
             if (textSpeed > 0.0f)
             {
@@ -271,6 +279,8 @@ namespace Yarn.Unity.Example
             }
             currentConversation[0].Add(message);
             currentConversation[1].Add("Player");
+            currentPlayerBubble = NewBubble(playerBubble, "You");
+            lineText.text = message;
             // Call the delegate to tell the dialogue system that we've
             // selected an option.
             SetSelectedOption(selectedOption);
@@ -305,6 +315,7 @@ namespace Yarn.Unity.Example
         /// Called when the dialogue system has started running.
         public override IEnumerator DialogueStarted()
         {
+            chatBubbles = new List<GameObject>();
             messageInput.SetActive(true);
             currentConversation = new List<string>[2];
             for (int i = 0; i < currentConversation.Length; i++)
@@ -333,6 +344,9 @@ namespace Yarn.Unity.Example
         public override IEnumerator DialogueComplete()
         {
             Debug.Log("Complete!");
+
+            foreach (GameObject bubble in chatBubbles)
+                Destroy(bubble);
 
             saveMethod(currentConversation, currentName, visitedNodes);
 

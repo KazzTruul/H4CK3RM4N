@@ -147,6 +147,5 @@ public class XMLManager : MonoBehaviour
         {
             nodesNav.AppendChild("<Node Name =\"" + node + "\"/>");
         }
-        print("bajs");
     }
 }
