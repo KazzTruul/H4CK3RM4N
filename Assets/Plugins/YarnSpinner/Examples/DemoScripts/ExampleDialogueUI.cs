@@ -121,7 +121,7 @@ namespace Yarn.Unity.Example
 
             messageInput.gameObject.SetActive(false);
 
-            lineText.gameObject.SetActive(false);
+            //lineText.gameObject.SetActive(false);
 
             foreach (var button in optionButtons)
             {
@@ -133,10 +133,13 @@ namespace Yarn.Unity.Example
                 continuePrompt.SetActive(false);
 
             onNewNode.AddListener(NewNode);
+            frame.SetActive(false);
         }
 
         GameObject NewBubble(GameObject bubblePrefab, string name)
         {
+            RectTransform rt = scrollRect.GetComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(rt.sizeDelta.x, 20f + (rt.childCount + 1) * 70f);
             foreach(GameObject bubble in chatBubbles)
             {
                 bubble.transform.position = new Vector3(bubble.transform.position.x, bubble.transform.position.y + 70f, bubble.transform.position.z);
@@ -145,7 +148,8 @@ namespace Yarn.Unity.Example
             chatBubbles.Add(newBubble);
             lineText = newBubble.transform.Find("MessageText").GetComponent<Text>();
             newBubble.transform.Find("NameText").GetComponent<Text>().text = name;
-            print(name);
+
+
             return newBubble;
         }
 
@@ -234,7 +238,7 @@ namespace Yarn.Unity.Example
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    if (Input.GetKeyDown((j + 1).ToString()) && Time.timeScale > 0f)
+                    if (Input.GetKeyDown((j + 1).ToString()) && optionButtons[j].gameObject.activeInHierarchy)
                     {
                         SetOption(j);
                         //HideOptions();
