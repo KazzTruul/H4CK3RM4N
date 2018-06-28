@@ -7,10 +7,11 @@ using System.IO;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Yarn.Unity.Example;
+using Yarn.Unity;
 
 /*By Björn Andersson*/
 
-/*Script that handles all saving and loading of information to and from XML-files. Also handles the transition and transfer of information between scenes.*/
+/*Script that handles all saving and loading of information to and from XML- and Yarn-files.*/
 
 public class XMLManager : MonoBehaviour
 {
@@ -25,8 +26,11 @@ public class XMLManager : MonoBehaviour
 
     static XmlDocument yarnXML = new XmlDocument();
 
+    SceneLoader sL;
+
     void Start()
     {
+        sL = GetComponent<SceneLoader>();
         if (!listenerAdded)
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -54,10 +58,11 @@ public class XMLManager : MonoBehaviour
             savedGamesMenu = GameObject.Find("SavedGamesMenu");
             for (int i = 0; i < 6; i++)
             {
-                GameObject saveButton = GameObject.Find("SavedGameButton" + i);
+                GameObject saveButton = GameObject.Find("SavedGameButton" + i.ToString());
                 if (File.Exists(Application.dataPath + ("/Saved_Game_" + i.ToString() + ".xml")))
                 {
-                    saveButton.GetComponent<Button>().onClick.AddListener(delegate { LoadGame(i); });
+                    int saveDelegate = i;
+                    saveButton.GetComponent<Button>().onClick.AddListener(delegate { LoadGame(saveDelegate); });
                     //TODO: add saved game sprites
                 }
                 else
@@ -69,23 +74,32 @@ public class XMLManager : MonoBehaviour
         }
         else if (scene.buildIndex == 2)
         {
+            if (loadingGame)
+            {
+                //TODO: add more loading functionality
+                yarnXML.Load(Application.dataPath + ("/Saved_Game_" + saveNo.ToString() + ".xml"));
+                loadingGame = false;
+            }
+            else
+            {
+                yarnXML.Load(Application.dataPath + "/XMLs/Yarn_XML.xml");
+            }
+            yarnXMLnav = yarnXML.CreateNavigator();
             ExampleDialogueUI example = FindObjectOfType<ExampleDialogueUI>();
             example.SaveMethod = SaveConversation;
-            example.dialogueStarted.AddListener(SendConversation);
+            example.DialogueRetriever = RetrieveConversation;
+            //example.dialogueStarted.AddListener(SendConversation);
             /*
             XmlDocument refXML = new XmlDocument();
             refXML.Load(Application.dataPath + "/Reference_XML.xml");
             XPathNavigator nav = refXML.CreateNavigator();
             */
-            if (loadingGame)
-            {
-                //TODO: add loading functionality
-            }
         }
     }
 
     public static void SaveConversation(List<string>[] messages, string name, List<string> nodes)
     {
+        NoNewMessages(name);
         if (yarnXMLnav == null)
         {
             yarnXML.Load(Application.dataPath + "/XMLs/Yarn_XML.xml");
@@ -102,7 +116,7 @@ public class XMLManager : MonoBehaviour
         }
     }
 
-    static List<string>[] RetrieveConversation(string name)
+    static Dialogue RetrieveConversation(string name)
     {
         List<string>[] conversation = new List<string>[2];
         for (int i = 0; i < 2; i++)
@@ -119,24 +133,103 @@ public class XMLManager : MonoBehaviour
             conversation[0].Add(message.GetAttribute("Text", ""));
             conversation[1].Add(message.GetAttribute("Name", ""));
         }
-        return conversation;
+        return new Dialogue(conversation, RetrieveYarnNodes(name));
     }
 
-    static void SendConversation()
+    [YarnCommand("NewNode")]
+    public static void NewYarnNode(string person, string node)
     {
-        FindObjectOfType<ExampleDialogueUI>().CurrentConversation = RetrieveConversation(FindObjectOfType<ExampleDialogueUI>().CurrentName);
+        XPathNavigator availableNodes = yarnXMLnav.SelectSingleNode("/Yarn/AvailableNodes");
+        foreach (XPathNavigator availableNode in availableNodes.SelectChildren(XPathNodeType.All))
+        {
+            if (availableNode.GetAttribute("Name", "") == person)
+            {
+                /*
+                XPathNavigator nodeName = availableNode.SelectSingleNode("/@NodeName");
+                nodeName.SetValue(node);
+                */
+                availableNode.MoveToAttribute("NodeName", "");
+                availableNode.SetValue(node);
+                return;
+            }
+        }
+    }
+
+    public static string GetLatestNode(string person)
+    {
+        XPathNavigator availableNodes = yarnXMLnav.SelectSingleNode("/Yarn/AvailableNodes");
+        foreach (XPathNavigator availableNode in availableNodes.SelectChildren(XPathNodeType.All))
+        {
+            if (availableNode.GetAttribute("Name", "") == person)
+            {
+                return availableNode.GetAttribute("NodeName", "");
+            }
+        }
+        print("Error: no node found for " + person);
+        return "";
     }
 
     static void SaveMessages(List<string>[] messages, string name)
     {
+        NoNewMessages(name);
         XmlNodeList previousChildren = yarnXML.SelectNodes("//Message");
         if (previousChildren.Count > 0)
             for (int i = previousChildren.Count - 1; i > -1; i--)
+            {
+                print("Loop 1: " + i);
                 previousChildren[i].ParentNode.RemoveChild(previousChildren[i]);
+            }
         XPathNavigator currentConversation = yarnXMLnav.SelectSingleNode("/Yarn/Conversations/" + name);
         for (int i = 0; i < messages[0].Count; i++)
         {
             currentConversation.AppendChild("<Message Text=\"" + messages[0][i] + "\" Name=\"" + messages[1][i] + "\"/>");
+        }
+    }
+
+    public static void SetNewMessageAvailable(string person, string messageNode)
+    {
+        XPathNavigator allNewMessages = yarnXMLnav.SelectSingleNode("/Yarn/NewMessages");
+        foreach (XPathNavigator child in allNewMessages.SelectChildren(XPathNodeType.All))
+        {
+            if (child.GetAttribute("Name", "") == person)
+            {
+                child.MoveToAttribute("NewMessage", "");
+                child.SetValue("true");
+            }
+        }
+        XPathNavigator nodes = yarnXMLnav.SelectSingleNode("/Yarn/AvailableNode");
+        foreach (XPathNavigator child in nodes.SelectChildren(XPathNodeType.All))
+        {
+            if (child.GetAttribute("Name", "") == person)
+            {
+                child.MoveToAttribute("AvailableNode", "");
+                child.SetValue(messageNode);
+            }
+        }
+    }
+
+    public static string GetNewMessageAvailable(string person)
+    {
+        XPathNavigator allNewMessages = yarnXMLnav.SelectSingleNode("/Yarn/NewMessages");
+        foreach (XPathNavigator child in allNewMessages.SelectChildren(XPathNodeType.All))
+        {
+            if (child.GetAttribute("Name", "") == person)
+                return child.GetAttribute("NewMessage", "");
+        }
+        print(person + " resulted in error.");
+        return "";
+    }
+
+    static void NoNewMessages(string person)
+    {
+        XPathNavigator allNewMessages = yarnXMLnav.SelectSingleNode("/Yarn/NewMessages");
+        foreach (XPathNavigator child in allNewMessages.SelectChildren(XPathNodeType.All))
+        {
+            if (child.GetAttribute("Name", "") == person)
+            {
+                child.MoveToAttribute("NewMessage", "");
+                child.SetValue("false");
+            }
         }
     }
 
@@ -147,5 +240,15 @@ public class XMLManager : MonoBehaviour
         {
             nodesNav.AppendChild("<Node Name =\"" + node + "\"/>");
         }
+    }
+
+    static List<string> RetrieveYarnNodes(string name)
+    {
+        List<string> nodes = new List<string>();
+        XPathNavigator nodesNav = yarnXMLnav.SelectSingleNode("/Yarn/VisitedNodes/" + name);
+        XPathNodeIterator iterator = nodesNav.SelectChildren(XPathNodeType.All);
+        foreach (XPathNavigator node in iterator)
+            nodes.Add(node.GetAttribute("Name", ""));
+        return nodes;
     }
 }

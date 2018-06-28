@@ -41,17 +41,43 @@ namespace Yarn.Unity.Example
      * is that you provide the RunLine, RunOptions, RunCommand
      * and DialogueComplete coroutines; what they do is up to you.
      */
+    public class Dialogue
+    {
+        List<string>[] messages;
+        List<string> nodes;
+
+        public List<string>[] Messages
+        {
+            get { return this.messages; }
+        }
+
+        public List<string> Nodes
+        {
+            get { return this.nodes; }
+        }
+
+        public Dialogue(List<string>[] messages, List<string> nodes)
+        {
+            this.messages = messages;
+            this.nodes = nodes;
+        }
+    }
+
     public class ExampleDialogueUI : Yarn.Unity.DialogueUIBehaviour
     {
         public static UnityEvent onNewNode = new UnityEvent();
 
         [SerializeField]
         GameObject messageInput, closeChatButton, frame, chatsMenu, aiBubble, playerBubble, scrollRect;
-        
+
         [SerializeField]
         AudioClip[] clickSounds;
 
         public delegate void SaveDialogueMethod(List<string>[] messages, string name, List<string> nodes);
+
+        public delegate Dialogue RetrieveDialogueMethod(string name);
+
+        RetrieveDialogueMethod dialogueRetriever;
 
         GameObject currentAIBubble, currentPlayerBubble;
 
@@ -71,7 +97,7 @@ namespace Yarn.Unity.Example
         {
             set { this.currentConversation = value; }
         }
-        
+
         /// The object that contains the dialogue and the options.
         /** This object will be enabled when conversation starts, and 
          * disabled when it ends.
@@ -110,6 +136,11 @@ namespace Yarn.Unity.Example
             set { this.saveMethod = value; }
         }
 
+        public RetrieveDialogueMethod DialogueRetriever
+        {
+            set { this.dialogueRetriever = value; }
+        }
+
         public List<string> VisitedNodes
         {
             get { return this.visitedNodes; }
@@ -118,7 +149,7 @@ namespace Yarn.Unity.Example
         void Awake()
         {
             // Start by hiding the container, line and option buttons
-
+            closeChatButton.SetActive(false);
             messageInput.gameObject.SetActive(false);
 
             //lineText.gameObject.SetActive(false);
@@ -140,7 +171,9 @@ namespace Yarn.Unity.Example
         {
             RectTransform rt = scrollRect.GetComponent<RectTransform>();
             rt.sizeDelta = new Vector2(rt.sizeDelta.x, 20f + (rt.childCount + 1) * 70f);
-            foreach(GameObject bubble in chatBubbles)
+            if (chatBubbles == null)
+                chatBubbles = new List<GameObject>();
+            foreach (GameObject bubble in chatBubbles)
             {
                 bubble.transform.position = new Vector3(bubble.transform.position.x, bubble.transform.position.y + 70f, bubble.transform.position.z);
             }
@@ -281,8 +314,9 @@ namespace Yarn.Unity.Example
                 yield return new WaitForSeconds(0.07f);
                 StartCoroutine(ClickSoundASDestroyer(clickSoundAS));
             }
+            messageInput.GetComponentInChildren<Text>().text = "";
             currentConversation[0].Add(message);
-            currentConversation[1].Add("Player");
+            currentConversation[1].Add("You");
             currentPlayerBubble = NewBubble(playerBubble, "You");
             lineText.text = message;
             // Call the delegate to tell the dialogue system that we've
@@ -308,24 +342,74 @@ namespace Yarn.Unity.Example
             yield break;
         }
 
-        public void StartDialogue(string name)
+        public void StartDialogue(string startNode)
         {
-            this.currentName = name;
             chatsMenu.SetActive(false);
             frame.SetActive(true);
-            GetComponent<DialogueRunner>().StartDialogue();
+            currentConversation = new List<string>[2];
+            for (int i = 0; i < 2; i++)
+                currentConversation[i] = new List<string>();
+            Dialogue pastDialogue = dialogueRetriever(this.currentName);
+            foreach (string node in pastDialogue.Nodes)
+                if (node == startNode)
+                {
+                    StartCoroutine(SpawnBubbles(pastDialogue, false, ""));
+                    return;
+                }
+            StartCoroutine(SpawnBubbles(pastDialogue, true, startNode));
+        }
+
+        IEnumerator SpawnBubbles(Dialogue pastDialogue, bool newMessages, string startNode)
+        {
+            for (int i = 0; i < pastDialogue.Messages[0].Count; i++)
+            {
+                if (pastDialogue.Messages[1][i] == "You")
+                    NewBubble(playerBubble, "You");
+                else
+                    NewBubble(aiBubble, pastDialogue.Messages[1][i]);
+
+                lineText.text = pastDialogue.Messages[0][i];
+                for (int j = 0; j < 2; j++)
+                    currentConversation[j].Add(pastDialogue.Messages[j][i]);
+                yield return null;
+            }
+            if (newMessages)
+                GetComponent<DialogueRunner>().StartDialogue(startNode);
+            else
+                closeChatButton.SetActive(true);
         }
 
         /// Called when the dialogue system has started running.
         public override IEnumerator DialogueStarted()
         {
-            chatBubbles = new List<GameObject>();
+            if (chatBubbles == null)
+                chatBubbles = new List<GameObject>();
             messageInput.SetActive(true);
-            currentConversation = new List<string>[2];
-            for (int i = 0; i < currentConversation.Length; i++)
-                currentConversation[i] = new List<string>();
+            if (currentConversation == null)
+            {
+                currentConversation = new List<string>[2];
+                for (int i = 0; i < currentConversation.Length; i++)
+                    currentConversation[i] = new List<string>();
+            }
             visitedNodes = new List<string>();
+            Dialogue previousDialogue = dialogueRetriever(currentName);
+            foreach (string node in previousDialogue.Nodes)
+                visitedNodes.Add(node);
             dialogueStarted.Invoke();
+            /*
+            for (int i = 0; i < previousDialogue.Messages[0].Count; i++)
+            {
+                GameObject newBubble;
+                if (previousDialogue.Messages[1][i] == "You")
+                    newBubble = NewBubble(playerBubble, "You");
+                else
+                    newBubble = NewBubble(aiBubble, previousDialogue.Messages[1][i]);
+                lineText.text = previousDialogue.Messages[0][i];
+                for (int j = 0; j < 2; j++)
+                    currentConversation[j].Add(previousDialogue.Messages[i][j]);
+                yield return null;
+            }
+            */
             Debug.Log("Dialogue starting!");
 
             // Enable the dialogue controls.
@@ -334,7 +418,7 @@ namespace Yarn.Unity.Example
                 dialogueContainer.SetActive(true);
                 */
 
-            
+
             // Hide the game controls.
             if (gameControlsContainer != null)
             {
@@ -348,9 +432,7 @@ namespace Yarn.Unity.Example
         public override IEnumerator DialogueComplete()
         {
             Debug.Log("Complete!");
-
-            foreach (GameObject bubble in chatBubbles)
-                Destroy(bubble);
+            closeChatButton.SetActive(true);
 
             saveMethod(currentConversation, currentName, visitedNodes);
 
@@ -372,6 +454,9 @@ namespace Yarn.Unity.Example
 
         public void CloseChat()
         {
+            foreach (GameObject bubble in chatBubbles)
+                Destroy(bubble);
+            chatBubbles = null;
             closeChatButton.SetActive(false);
             frame.SetActive(false);
             chatsMenu.SetActive(true);

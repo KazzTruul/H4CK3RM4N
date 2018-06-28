@@ -24,6 +24,16 @@
     </Hacker>
   </Conversations>
   <Variables>
-    
+
   </Variables>
+  <AvailableNodes>
+    <Node Name ="Max" NodeName ="MAXSTART"/>
+    <Node Name ="Agent" NodeName ="AGENTSTART"/>
+    <Node Name ="W1CK3D" NodeName ="W1CK3DSTART"/>
+  </AvailableNodes>
+  <NewMessages>
+    <Person Name ="Max" NewMessage="true"/>
+    <Person Name ="Agent" NewMessage="false"/>
+    <Person Name ="W1CK3D" NewMessage="false"/>
+  </NewMessages>
 </Yarn>

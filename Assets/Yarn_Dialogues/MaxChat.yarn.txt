@@ -1,79 +1,18 @@
-title: FriendStart
+title: MAXSTART
 tags: 
 colorID: 0
-position: 234,357
----
-<<ChangeName ChatName Max>>
-<<set $current_name to "Max">>
-<<ChangeSprite ChatImage Max_Sprite_Sheet_0>>
-Heyy!! I just wanted to check in on you on your first here day at QSoft! :) It's so cool to have my best friend working at the same company as me :D so what do you think about your new job so far?
-
-[[Oh hey! So far it's awesome, I'm so glad you told me to apply for this job :D|IMGOOD]]
-[[To be honest, I don't think it's really what I expected...|IMBAD]]
-[[You know, I'm not really sure just yet :P Haven't had much of a chance to settle in yet|IDK]]
-===
-title: IMGOOD
-tags: 
-colorID: 0
-position: 25,597
----
-<<ChangeSprite ChatImage Max_Sprite_Sheet_1>>
-That's so good to hear!! :D Listen, I'm having a few friends over on friday night, you should totally join! If you're not still too hungover from last time that is? ;)
-[[That sounds like a challenge ;) You're on!|ACCEPTPARTYINVITE]]
-[[Aww, I wish I could, but for once I already have plans... next time, I promise!|CONFIRMDENYPARTYINVITE]]
-===
-title: IDK
-tags: 
-colorID: 0
-position: 238,599
----
-<<ChangeSprite ChatImage Max_Sprite_Sheet_2>>
-Oh... well, I hope you'll settle in soon and enjoy your new job ^^ Anyways, I'm having some friends over this friday night, I thought maybe you'd wanna join?? :3
-[[Sure, that sounds like it could be fun :)|ACCEPTPARTYINVITE]]
-[[Sounds fun, but I already have plans :(|CONFIRMDENYPARTYINVITE]]
-===
-title: IMBAD
-tags: 
-colorID: 0
-position: 449,599
----
-<<ChangeSprite ChatImage Max_Sprite_Sheet_3>>
-Aww, that sucks :c But if you can hold until friday night I'm throwing a party at my place, maybe that would cheer you up? ;)
-[[OMG YES, that sounds like exactly what I need!|ACCEPTPARTYINVITE]]
-[[I don't think I can make it this friday, maybe next time :/|CONFIRMDENYPARTYINVITE]]
-===
-title: ACCEPTPARTYINVITE
-tags: 
-colorID: 0
-position: 91,1073
+position: 97,728
 ---
 <<ChangeSprite ChatImage Max_Sprite_Sheet_0>>
-Great!! I'll see you then ;)
--> See you then, take care!
+test
+<<NewNode GameManager Max TEST>>
+-> testing
 ===
-title: DENYPARTYINVITE
+title: TEST
 tags: 
 colorID: 0
-position: 364,1077
+position: 405,736
 ---
-<<ChangeSprite ChatImage Max_Sprite_Sheet_4>>
-Ughh, fine, but you better show up next time
--> I will, I promise
-===
-title: Node15
-tags: 
-colorID: 0
-position: 525,27673
----
-Empty Text
-===
-title: CONFIRMDENYPARTYINVITE
-tags: 
-colorID: 0
-position: 364,841
----
-<<ChangeSprite ChatImage Max_Sprite_Sheet_4>>
-Aww cmon, I've already told people you're gonna be there! You don't wanna make me a liar, do you? :'(
-[[Fine, I'll be there, you devious bastard...|ACCEPTPARTYINVITE]]
-[[Well, maybe you'll finally learn not to make promises you can't keep then ;) though I strongly doubt it...|DENYPARTYINVITE]]
+WOOHOO!! :D
+-> awww yeeee
 ===
