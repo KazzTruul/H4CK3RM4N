@@ -323,11 +323,9 @@
     <None Include="Assets\Stuff_For_Credits\!license.txt" />
     <None Include="Assets\Stuff_For_Credits\Credits.txt" />
     <None Include="Assets\Stuff_For_Credits\HACKED_readme.txt" />
-    <None Include="Assets\XMLs\Commands_Database_XML.xml" />
+    <None Include="Assets\XMLs\Login_XML.xml" />
     <None Include="Assets\XMLs\Mail_Database_XML.xml" />
-    <None Include="Assets\XMLs\Reference_XML.xml" />
-    <None Include="Assets\XMLs\Saved_Game_XML.xml" />
-    <None Include="Assets\XMLs\Yarn_XML.xml" />
+    <None Include="Assets\XMLs\Save_Template_XML.xml" />
     <None Include="Assets\Yarn_Dialogues\AgentChat.yarn.txt" />
     <None Include="Assets\Yarn_Dialogues\MaxChat.yarn.txt" />
     <None Include="Assets\Yarn_Dialogues\W1CK3DChat.yarn.txt" />

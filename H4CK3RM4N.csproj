@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -315,6 +317,7 @@
     <Compile Include="Assets\Scripts\Menu_Scripts\ButtonHighlighter.cs" />
     <Compile Include="Assets\Scripts\Menu_Scripts\IntroLerp.cs" />
     <Compile Include="Assets\Scripts\Menu_Scripts\MainMenuScript.cs" />
+    <Compile Include="Assets\Scripts\Systems\CodeInputHandler.cs" />
     <Compile Include="Assets\Scripts\Systems\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Systems\TrollScript.cs" />
     <Compile Include="Assets\Scripts\Systems\XMLManager.cs" />
@@ -332,11 +335,13 @@
     <None Include="Assets\Stuff_For_Credits\!license.txt" />
     <None Include="Assets\Stuff_For_Credits\Credits.txt" />
     <None Include="Assets\Stuff_For_Credits\HACKED_readme.txt" />
-    <None Include="Assets\XMLs\Commands_Database_XML.xml" />
+    <None Include="Assets\XMLs\Login_XML.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\XMLs\Mail_Database_XML.xml" />
-    <None Include="Assets\XMLs\Reference_XML.xml" />
-    <None Include="Assets\XMLs\Saved_Game_XML.xml" />
-    <None Include="Assets\XMLs\Yarn_XML.xml" />
+    <None Include="Assets\XMLs\Save_Template_XML.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\Yarn_Dialogues\AgentChat.yarn.txt" />
     <None Include="Assets\Yarn_Dialogues\MaxChat.yarn.txt" />
     <None Include="Assets\Yarn_Dialogues\W1CK3DChat.yarn.txt" />

@@ -29,8 +29,9 @@ public class TrollScript : MonoBehaviour {
         print(rot.z);
         wallpaper.localRotation = rot;
         */
-        wallpaper.Rotate(new Vector3(0f, 0f, Random.Range(-180f, 180f)));
-        yield return new WaitForSecondsRealtime(Random.Range(0.4f, 1f));
+        wallpaper.localPosition = new Vector3(Random.Range(-200f, 200f), Random.Range(-200f, 200f), 0f);
+        wallpaper.Rotate(new Vector3(0f, 0f, Random.Range(-360f, 360f)));
+        yield return new WaitForSecondsRealtime(Random.Range(0.2f, 1.4f));
         StartCoroutine("HardModeCoRoutine");
     }
 
