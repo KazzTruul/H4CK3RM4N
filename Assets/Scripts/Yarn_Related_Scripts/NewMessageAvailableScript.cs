@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity.Example;
 using Yarn.Unity;
+using System.IO;
 
 /*By Björn Andersson*/
 
@@ -23,14 +24,16 @@ public class NewMessageAvailableScript : MonoBehaviour
     string currentNode;
 
     bool showNewMessageText = true;
-        
+
     private void OnEnable()
     {
         myButton = GetComponent<Button>();
         string availableNode = XMLManager.GetLatestNode(nameOfAI);
+
+        NewMessage(availableNode);
         if (currentNode != availableNode && XMLManager.GetNewMessageAvailable(nameOfAI) == "true")
         {
-            NewMessage(availableNode);
+            StartCoroutine("BlinkNewMessageText");
         }
         else
         {
@@ -49,7 +52,6 @@ public class NewMessageAvailableScript : MonoBehaviour
         myButton.onClick.AddListener(() => FindObjectOfType<ExampleDialogueUI>().CurrentName = nameOfAI);
         myButton.onClick.AddListener(() => FindObjectOfType<ExampleDialogueUI>().StartDialogue(newNode));
         myButton.onClick.AddListener(() => this.NewCurrentNode(newNode));
-        StartCoroutine("BlinkNewMessageText");
     }
 
     IEnumerator BlinkNewMessageText()

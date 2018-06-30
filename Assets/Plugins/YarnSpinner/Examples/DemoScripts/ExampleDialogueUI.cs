@@ -350,6 +350,11 @@ namespace Yarn.Unity.Example
             for (int i = 0; i < 2; i++)
                 currentConversation[i] = new List<string>();
             Dialogue pastDialogue = dialogueRetriever(this.currentName);
+            if (pastDialogue == null)
+            {
+                closeChatButton.SetActive(true);
+                return;
+            }
             foreach (string node in pastDialogue.Nodes)
                 if (node == startNode)
                 {
@@ -454,8 +459,9 @@ namespace Yarn.Unity.Example
 
         public void CloseChat()
         {
-            foreach (GameObject bubble in chatBubbles)
-                Destroy(bubble);
+            if (chatBubbles != null)
+                foreach (GameObject bubble in chatBubbles)
+                    Destroy(bubble);
             chatBubbles = null;
             closeChatButton.SetActive(false);
             frame.SetActive(false);

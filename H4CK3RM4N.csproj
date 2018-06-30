@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.1f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -332,16 +330,12 @@
     <None Include="Assets\Plugins\YarnSpinner\Examples\DemoAssets\Space\Sally.yarn.txt" />
     <None Include="Assets\Plugins\YarnSpinner\Examples\DemoAssets\Space\Ship.yarn.txt" />
     <None Include="Assets\Plugins\YarnSpinner\README.txt" />
+    <None Include="Assets\StreamingAssets\Login_XML.xml" />
+    <None Include="Assets\StreamingAssets\Mail_Database_XML.xml" />
+    <None Include="Assets\StreamingAssets\Save_Template_XML.xml" />
     <None Include="Assets\Stuff_For_Credits\!license.txt" />
     <None Include="Assets\Stuff_For_Credits\Credits.txt" />
     <None Include="Assets\Stuff_For_Credits\HACKED_readme.txt" />
-    <None Include="Assets\XMLs\Login_XML.xml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Assets\XMLs\Mail_Database_XML.xml" />
-    <None Include="Assets\XMLs\Save_Template_XML.xml">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Assets\Yarn_Dialogues\AgentChat.yarn.txt" />
     <None Include="Assets\Yarn_Dialogues\MaxChat.yarn.txt" />
     <None Include="Assets\Yarn_Dialogues\W1CK3DChat.yarn.txt" />
