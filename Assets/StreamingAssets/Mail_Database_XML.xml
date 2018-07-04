@@ -2,13 +2,16 @@
 <MailDatabase>
   <Senders>
     <Agent>
-      
+
     </Agent>
     <Max>
-      
+
     </Max>
     <W1CK3D>
-      
+
     </W1CK3D>
+    <Corporate>
+      <Mail Sender ="Corporate" Receiver ="Employees of Branchton Branch" Subject ="Security Violations at Branchton" Read ="False" Message ="Attention all employees at Branchton!\nIt has come to our attention that a number of unpermitted intrusions into the accounts of several corporate employees have been conducted from your branch headquarters. We strongly encourage any employees with knowledge about these events or the identity of the culprit to come forth with this information immediately. A substantial reward will be awarded to any employee providing information leading to the identification of the mole. Thank you,\nJenna Payton, CSO QSoft International"/>
+    </Corporate>
   </Senders>
 </MailDatabase>

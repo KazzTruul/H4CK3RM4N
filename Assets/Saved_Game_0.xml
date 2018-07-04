@@ -1,0 +1,41 @@
+﻿<?xml version="1.0"?>
+<Game>
+  <Yarn>
+    <VisitedNodes>
+      <Agent>
+      </Agent>
+      <Max>
+        <Node Name="MAXSTART" />
+        <Node Name="MAXSTART" />
+        <Node Name="TEST" />
+      </Max>
+      <Hacker>
+      </Hacker>
+    </VisitedNodes>
+    <Conversations>
+      <Agent>
+      </Agent>
+      <Max>
+        <Message Text="test" Name="Max" />
+        <Message Text=" testing" Name="You" />
+        <Message Text="WOOHOO!! :D" Name="Max" />
+        <Message Text=" awww yeeee" Name="You" />
+      </Max>
+      <Hacker>
+      </Hacker>
+    </Conversations>
+    <Variables>
+    </Variables>
+    <AvailableNodes>
+      <Node Name="Max" NodeName="TEST" />
+      <Node Name="Agent" NodeName="AGENTSTART" />
+      <Node Name="W1CK3D" NodeName="W1CK3DSTART" />
+    </AvailableNodes>
+    <NewMessages>
+      <Person Name="Max" NewMessage="false" />
+      <Person Name="Agent" NewMessage="false" />
+      <Person Name="W1CK3D" NewMessage="false" />
+    </NewMessages>
+  </Yarn>
+  <Console Text="" />
+</Game>
