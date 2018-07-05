@@ -10,20 +10,28 @@ using UnityEngine.UI;
 public class InboxSizer : MonoBehaviour
 {
     [SerializeField]
-    RectTransform rt;
+    Scrollbar myBar;
+    
+    [SerializeField]
+    ScrollRect sR;
 
     [SerializeField]
-    GameObject inboxMail;
+    GameObject inboxMail, openedMail;
 
     [SerializeField]
     Sprite openedMailSprite;
 
     List<GameObject> inbox;
 
+    float originalYDelta;
+
     void Awake()
     {
-        rt.sizeDelta = new Vector2(rt.sizeDelta.x, (this.transform.childCount) * 100f);
-        rt.GetComponent<ScrollRect>().content = GetComponent<RectTransform>();
+        myBar.gameObject.SetActive(true);
+        sR.verticalScrollbar = myBar;
+        originalYDelta = GetComponent<RectTransform>().sizeDelta.y;
+        GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x, (this.transform.childCount) * 100f);
+        //rt.GetComponent<ScrollRect>().content = GetComponent<RectTransform>();
         inbox = new List<GameObject>();
         StartCoroutine("SpawnAllInboxMail");
     }
@@ -37,9 +45,9 @@ public class InboxSizer : MonoBehaviour
         }
     }
 
-    void SpawnInboxMail(string sender, string receiver, string subject, string read)
+    public void SpawnInboxMail(string sender, string receiver, string subject, string read)
     {
-        rt.sizeDelta = new Vector2(rt.sizeDelta.x, 10f + (inbox.Count + 1) * 100f);
+        GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x, 10f + (inbox.Count + 1) * 100f);
         foreach (GameObject oldMail in inbox)
             oldMail.transform.position = new Vector3(oldMail.transform.position.x, oldMail.transform.position.y - 100f, oldMail.transform.position.z);
         GameObject mail = Instantiate(inboxMail, this.transform);
@@ -53,13 +61,16 @@ public class InboxSizer : MonoBehaviour
         Transform subjectTextTransform = receiverTextTransform.Find("SubjectText");
         subjectTextTransform.GetComponent<Text>().text = subject;
         mail.GetComponent<Button>().onClick.AddListener(() => XMLManager.SetMailContents(subject));
+        mail.GetComponent<Button>().onClick.AddListener(() => { openedMail.SetActive(true); this.transform.parent.gameObject.SetActive(false); });
         inbox.Add(mail);
     }
 
     private void OnDisable()
     {
+        myBar.gameObject.SetActive(false);
         foreach (GameObject mail in inbox)
             Destroy(mail);
         inbox = null;
+        GetComponent<RectTransform>().sizeDelta = new Vector2(GetComponent<RectTransform>().sizeDelta.x, originalYDelta);
     }
 }
