@@ -43,30 +43,7 @@
     <Mail Sender ="Corporate" Receiver ="test" Subject ="test1" Read ="False" Message ="Attention all employees at Branchton!
 It has come to our attention that a number of unpermitted intrusions into the accounts of several corporate employees have been conducted from your branch headquarters. We strongly encourage any employees with knowledge about these events or the identity of the culprit to come forth with this information immediately. A substantial reward will be awarded to any employee providing information leading to the identification of the mole. Thank you,
 Jenna Payton, CSO QSoft International"/>
-    <Mail Sender ="Corporate" Receiver ="test1" Subject ="test1" Read ="False" Message ="Attention all employees at Branchton!
-It has come to our attention that a number of unpermitted intrusions into the accounts of several corporate employees have been conducted from your branch headquarters. We strongly encourage any employees with knowledge about these events or the identity of the culprit to come forth with this information immediately. A substantial reward will be awarded to any employee providing information leading to the identification of the mole. Thank you,
-Jenna Payton, CSO QSoft International"/>
-    <Mail Sender ="Corporate" Receiver ="test2" Subject ="test1" Read ="False" Message ="Attention all employees at Branchton!
-It has come to our attention that a number of unpermitted intrusions into the accounts of several corporate employees have been conducted from your branch headquarters. We strongly encourage any employees with knowledge about these events or the identity of the culprit to come forth with this information immediately. A substantial reward will be awarded to any employee providing information leading to the identification of the mole. Thank you,
-Jenna Payton, CSO QSoft International"/>
-    <Mail Sender ="Corporate" Receiver ="test3" Subject ="test1" Read ="False" Message ="Attention all employees at Branchton!
-It has come to our attention that a number of unpermitted intrusions into the accounts of several corporate employees have been conducted from your branch headquarters. We strongly encourage any employees with knowledge about these events or the identity of the culprit to come forth with this information immediately. A substantial reward will be awarded to any employee providing information leading to the identification of the mole. Thank you,
-Jenna Payton, CSO QSoft International"/>
-    <Mail Sender ="Corporate" Receiver ="test4" Subject ="test1" Read ="False" Message ="Attention all employees at Branchton!
-It has come to our attention that a number of unpermitted intrusions into the accounts of several corporate employees have been conducted from your branch headquarters. We strongly encourage any employees with knowledge about these events or the identity of the culprit to come forth with this information immediately. A substantial reward will be awarded to any employee providing information leading to the identification of the mole. Thank you,
-Jenna Payton, CSO QSoft International"/>
-    <Mail Sender ="Corporate" Receiver ="test5" Subject ="test1" Read ="False" Message ="Attention all employees at Branchton!
-It has come to our attention that a number of unpermitted intrusions into the accounts of several corporate employees have been conducted from your branch headquarters. We strongly encourage any employees with knowledge about these events or the identity of the culprit to come forth with this information immediately. A substantial reward will be awarded to any employee providing information leading to the identification of the mole. Thank you,
-Jenna Payton, CSO QSoft International"/>
-    <Mail Sender ="Corporate" Receiver ="test6" Subject ="test1" Read ="False" Message ="Attention all employees at Branchton!
-It has come to our attention that a number of unpermitted intrusions into the accounts of several corporate employees have been conducted from your branch headquarters. We strongly encourage any employees with knowledge about these events or the identity of the culprit to come forth with this information immediately. A substantial reward will be awarded to any employee providing information leading to the identification of the mole. Thank you,
-Jenna Payton, CSO QSoft International"/>
-    <Mail Sender ="Corporate" Receiver ="test7" Subject ="test1" Read ="False" Message ="Attention all employees at Branchton!
-It has come to our attention that a number of unpermitted intrusions into the accounts of several corporate employees have been conducted from your branch headquarters. We strongly encourage any employees with knowledge about these events or the identity of the culprit to come forth with this information immediately. A substantial reward will be awarded to any employee providing information leading to the identification of the mole. Thank you,
-Jenna Payton, CSO QSoft International"/>
-    <Mail Sender ="Corporate" Receiver ="test8" Subject ="test1" Read ="False" Message ="Attention all employees at Branchton!
-It has come to our attention that a number of unpermitted intrusions into the accounts of several corporate employees have been conducted from your branch headquarters. We strongly encourage any employees with knowledge about these events or the identity of the culprit to come forth with this information immediately. A substantial reward will be awarded to any employee providing information leading to the identification of the mole. Thank you,
-Jenna Payton, CSO QSoft International"/>
   </Inbox>
   <Console Text =""/>
+  <LoadText Text ="I... I don't really remember anything."/>
 </Game>

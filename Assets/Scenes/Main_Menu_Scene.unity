@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 5055f1a57fe076641b485eb1967466ad,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -455,6 +456,7 @@ GameObject:
   - component: {fileID: 149025646}
   - component: {fileID: 149025648}
   - component: {fileID: 149025647}
+  - component: {fileID: 149025649}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -475,11 +477,11 @@ RectTransform:
   m_Father: {fileID: 571856273}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -24.127258}
-  m_SizeDelta: {x: 160, y: 28}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149025647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,7 +503,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6111179205a67954eaaed827d6e97fe0, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -512,13 +514,29 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game 1
+  m_Text: Lots of text explaining what the last important thing that happened in a
+    certain saved game was. Lots and lots of space to explain lots of important shit.
+    fucking seriously. Lots of space.
 --- !u!222 &149025648
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 149025645}
+--- !u!114 &149025649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 149025645}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 1, b: 0, a: 0.534}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &162279094
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +685,7 @@ GameObject:
   - component: {fileID: 251719429}
   - component: {fileID: 251719431}
   - component: {fileID: 251719430}
+  - component: {fileID: 251719432}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -687,11 +706,11 @@ RectTransform:
   m_Father: {fileID: 1585731026}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -24.127258}
-  m_SizeDelta: {x: 160, y: 28}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &251719430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,7 +732,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6111179205a67954eaaed827d6e97fe0, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -724,13 +743,29 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game 1
+  m_Text: Lots of text explaining what the last important thing that happened in a
+    certain saved game was. Lots and lots of space to explain lots of important shit.
+    fucking seriously. Lots of space.
 --- !u!222 &251719431
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 251719428}
+--- !u!114 &251719432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 251719428}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 1, b: 0, a: 0.534}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &266836883
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 378815428}
   - component: {fileID: 378815427}
+  - component: {fileID: 378815429}
   m_Layer: 5
   m_Name: MenuManager
   m_TagString: Untagged
@@ -869,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confirmQuitMenu: {fileID: 120839726}
-  settingsMenu: {fileID: 0}
+  settingsMenu: {fileID: 1529048860}
   savedGamesMenu: {fileID: 1920885326}
 --- !u!224 &378815428
 RectTransform:
@@ -889,6 +925,21 @@ RectTransform:
   m_AnchoredPosition: {x: 647, y: 246.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &378815429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 378815426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e369e72191089bd46906fb30ee888ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 90627fd523733ff4c820634c7dd0c626, type: 2}
+  sfxSlider: {fileID: 706935836}
+  masterVolumeSlider: {fileID: 1542424249}
+  musicSlider: {fileID: 847380354}
 --- !u!1 &429494673
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +951,7 @@ GameObject:
   - component: {fileID: 429494677}
   - component: {fileID: 429494676}
   - component: {fileID: 429494675}
+  - component: {fileID: 429494678}
   m_Layer: 5
   m_Name: SavedGameButton4
   m_TagString: Untagged
@@ -973,7 +1025,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429494673}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1000,6 +1052,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429494673}
+--- !u!114 &429494678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429494673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e490a20af5f13a409c9a7736926d851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonHoverSound: {fileID: 0}
+  buttonPressSound: {fileID: 0}
+  buttonPressAS: {fileID: 1420341097}
+  buttonHoverAS: {fileID: 266836885}
 --- !u!1 &496661664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,12 +1150,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 496661664}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectColor: {r: 0, g: 1, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1 &526910165
@@ -1280,6 +1347,7 @@ GameObject:
   - component: {fileID: 571856276}
   - component: {fileID: 571856275}
   - component: {fileID: 571856274}
+  - component: {fileID: 571856277}
   m_Layer: 5
   m_Name: SavedGameButton5
   m_TagString: Untagged
@@ -1353,7 +1421,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 571856272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1380,6 +1448,27 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 571856272}
+--- !u!114 &571856277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 571856272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e490a20af5f13a409c9a7736926d851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonHoverSound: {fileID: 0}
+  buttonPressSound: {fileID: 0}
+  buttonPressAS: {fileID: 1420341097}
+  buttonHoverAS: {fileID: 266836885}
+--- !u!114 &706935836 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114163915178366100, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154704525}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &743833047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,6 +1558,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 743833047}
+--- !u!114 &847380354 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114192223913114928, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154704525}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &875313704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,7 +1992,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 952375304}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1529048860}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1054830052}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &952375304
@@ -2120,6 +2237,7 @@ GameObject:
   - component: {fileID: 1077036078}
   - component: {fileID: 1077036077}
   - component: {fileID: 1077036076}
+  - component: {fileID: 1077036079}
   m_Layer: 5
   m_Name: SavedGameButton1
   m_TagString: Untagged
@@ -2193,7 +2311,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1077036074}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -2220,6 +2338,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1077036074}
+--- !u!114 &1077036079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1077036074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e490a20af5f13a409c9a7736926d851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonHoverSound: {fileID: 0}
+  buttonPressSound: {fileID: 0}
+  buttonPressAS: {fileID: 1420341097}
+  buttonHoverAS: {fileID: 266836885}
 --- !u!1 &1093891207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,6 +2444,7 @@ GameObject:
   - component: {fileID: 1100483645}
   - component: {fileID: 1100483647}
   - component: {fileID: 1100483646}
+  - component: {fileID: 1100483648}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2331,11 +2465,11 @@ RectTransform:
   m_Father: {fileID: 1077036075}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -24.127258}
-  m_SizeDelta: {x: 160, y: 28}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1100483646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2357,7 +2491,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6111179205a67954eaaed827d6e97fe0, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -2368,13 +2502,174 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game 1
+  m_Text: Lots of text explaining what the last important thing that happened in a
+    certain saved game was. Lots and lots of space to explain lots of important shit.
+    fucking seriously. Lots of space.
 --- !u!222 &1100483647
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1100483644}
+--- !u!114 &1100483648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1100483644}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 1, b: 0, a: 0.534}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!1001 &1154704525
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1629131798}
+    m_Modifications:
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114163915178366100, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 378815429}
+    - target: {fileID: 114192223913114928, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 378815429}
+    - target: {fileID: 114466773435512938, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 378815429}
+    - target: {fileID: 114070032923605848, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: buttonPressAS
+      value: 
+      objectReference: {fileID: 1420341097}
+    - target: {fileID: 114070032923605848, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: buttonHoverAS
+      value: 
+      objectReference: {fileID: 266836885}
+    - target: {fileID: 114923592737963196, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_EffectColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114923592737963196, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_EffectColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114923592737963196, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_EffectColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114923592737963196, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 77ad8c5af9eaa7843815bd3efc52f4f3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1331959308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,6 +2744,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1331959308}
+--- !u!1 &1342731859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1342731860}
+  - component: {fileID: 1342731862}
+  - component: {fileID: 1342731861}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1342731860
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1342731859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1920885330}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -200, y: 80}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1342731861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1342731859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 6111179205a67954eaaed827d6e97fe0, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 60
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: What's the last thing you remember?
+--- !u!222 &1342731862
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1342731859}
 --- !u!1 &1420341096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,6 +2938,7 @@ GameObject:
   - component: {fileID: 1507086156}
   - component: {fileID: 1507086158}
   - component: {fileID: 1507086157}
+  - component: {fileID: 1507086159}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2589,11 +2959,11 @@ RectTransform:
   m_Father: {fileID: 429494674}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -24.127258}
-  m_SizeDelta: {x: 160, y: 28}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1507086157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2615,7 +2985,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6111179205a67954eaaed827d6e97fe0, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -2626,13 +2996,39 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game 1
+  m_Text: Lots of text explaining what the last important thing that happened in a
+    certain saved game was. Lots and lots of space to explain lots of important shit.
+    fucking seriously. Lots of space.
 --- !u!222 &1507086158
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1507086155}
+--- !u!114 &1507086159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507086155}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 1, b: 0, a: 0.534}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!1 &1529048860 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1943212904906690, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154704525}
+--- !u!224 &1529048861 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224942099942543642, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154704525}
 --- !u!1 &1538305355
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,6 +3039,7 @@ GameObject:
   - component: {fileID: 1538305356}
   - component: {fileID: 1538305358}
   - component: {fileID: 1538305357}
+  - component: {fileID: 1538305359}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2663,11 +3060,11 @@ RectTransform:
   m_Father: {fileID: 2103470523}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -24.127258}
-  m_SizeDelta: {x: 160, y: 28}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1538305357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,7 +3086,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6111179205a67954eaaed827d6e97fe0, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -2700,13 +3097,35 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game 1
+  m_Text: Lots of text explaining what the last important thing that happened in a
+    certain saved game was. Lots and lots of space to explain lots of important shit.
+    fucking seriously. Lots of space.
 --- !u!222 &1538305358
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1538305355}
+--- !u!114 &1538305359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1538305355}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 1, b: 0, a: 0.534}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1542424249 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114466773435512938, guid: 77ad8c5af9eaa7843815bd3efc52f4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1154704525}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1585731025
 GameObject:
   m_ObjectHideFlags: 0
@@ -2718,6 +3137,7 @@ GameObject:
   - component: {fileID: 1585731029}
   - component: {fileID: 1585731028}
   - component: {fileID: 1585731027}
+  - component: {fileID: 1585731030}
   m_Layer: 5
   m_Name: SavedGameButton0
   m_TagString: Untagged
@@ -2791,7 +3211,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1585731025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -2818,6 +3238,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1585731025}
+--- !u!114 &1585731030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1585731025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e490a20af5f13a409c9a7736926d851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonHoverSound: {fileID: 0}
+  buttonPressSound: {fileID: 0}
+  buttonPressAS: {fileID: 1420341097}
+  buttonHoverAS: {fileID: 266836885}
 --- !u!1 &1629131794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,6 +3342,7 @@ RectTransform:
   - {fileID: 1991535148}
   - {fileID: 120839727}
   - {fileID: 1920885330}
+  - {fileID: 1529048861}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3312,6 +3748,7 @@ RectTransform:
   - {fileID: 2103470523}
   - {fileID: 429494674}
   - {fileID: 571856273}
+  - {fileID: 1342731860}
   m_Father: {fileID: 1629131798}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3331,6 +3768,7 @@ GameObject:
   - component: {fileID: 1982362746}
   - component: {fileID: 1982362745}
   - component: {fileID: 1982362744}
+  - component: {fileID: 1982362747}
   m_Layer: 5
   m_Name: SavedGameButton2
   m_TagString: Untagged
@@ -3404,7 +3842,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1982362742}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -3431,6 +3869,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1982362742}
+--- !u!114 &1982362747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982362742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e490a20af5f13a409c9a7736926d851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonHoverSound: {fileID: 0}
+  buttonPressSound: {fileID: 0}
+  buttonPressAS: {fileID: 1420341097}
+  buttonHoverAS: {fileID: 266836885}
 --- !u!1 &1991535147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3657,6 +4110,7 @@ GameObject:
   - component: {fileID: 2057144289}
   - component: {fileID: 2057144291}
   - component: {fileID: 2057144290}
+  - component: {fileID: 2057144292}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3677,11 +4131,11 @@ RectTransform:
   m_Father: {fileID: 1982362743}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -24.127258}
-  m_SizeDelta: {x: 160, y: 28}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057144290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3703,7 +4157,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6111179205a67954eaaed827d6e97fe0, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -3714,13 +4168,29 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game 1
+  m_Text: Lots of text explaining what the last important thing that happened in a
+    certain saved game was. Lots and lots of space to explain lots of important shit.
+    fucking seriously. Lots of space.
 --- !u!222 &2057144291
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2057144288}
+--- !u!114 &2057144292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057144288}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 1, b: 0, a: 0.534}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2103470522
 GameObject:
   m_ObjectHideFlags: 0
@@ -3732,6 +4202,7 @@ GameObject:
   - component: {fileID: 2103470526}
   - component: {fileID: 2103470525}
   - component: {fileID: 2103470524}
+  - component: {fileID: 2103470527}
   m_Layer: 5
   m_Name: SavedGameButton3
   m_TagString: Untagged
@@ -3805,7 +4276,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2103470522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -3832,3 +4303,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2103470522}
+--- !u!114 &2103470527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2103470522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e490a20af5f13a409c9a7736926d851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonHoverSound: {fileID: 0}
+  buttonPressSound: {fileID: 0}
+  buttonPressAS: {fileID: 1420341097}
+  buttonHoverAS: {fileID: 266836885}

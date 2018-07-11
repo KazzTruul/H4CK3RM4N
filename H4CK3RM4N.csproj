@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.1f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -314,34 +312,31 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Game_Scripts\CodeInputHandler.cs" />
-    <Compile Include="Assets\Scripts\Game_Scripts\DashBlinker.cs" />
-    <Compile Include="Assets\Scripts\Game_Scripts\DraggableWindowScript.cs" />
-    <Compile Include="Assets\Scripts\Game_Scripts\InboxSizer.cs" />
-    <Compile Include="Assets\Scripts\Game_Scripts\OpenedMailSizer.cs" />
-    <Compile Include="Assets\Scripts\Game_Scripts\SceneLoader.cs" />
-    <Compile Include="Assets\Scripts\Game_Scripts\TrollScript.cs" />
-    <Compile Include="Assets\Scripts\Game_Scripts\XMLManager.cs" />
-    <Compile Include="Assets\Scripts\Menu_Scripts\ButtonHighlighter.cs" />
-    <Compile Include="Assets\Scripts\Menu_Scripts\IntroLerp.cs" />
-    <Compile Include="Assets\Scripts\Menu_Scripts\MainMenuScript.cs" />
-    <Compile Include="Assets\Scripts\Yarn_Related_Scripts\ChatNameChanger.cs" />
-    <Compile Include="Assets\Scripts\Yarn_Related_Scripts\ChatSpriteChanger.cs" />
-    <Compile Include="Assets\Scripts\Yarn_Related_Scripts\NewMessageAvailableScript.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Game_Scripts\CodeInputHandler.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Game_Scripts\DashBlinker.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Game_Scripts\DraggableWindowScript.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Game_Scripts\InboxSizer.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Game_Scripts\OpenedMailSizer.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Game_Scripts\SceneLoader.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Game_Scripts\TrollScript.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Game_Scripts\XMLManager.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Menu_Scripts\ButtonHighlighter.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Menu_Scripts\IntroLerp.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Menu_Scripts\MainMenuScript.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Menu_Scripts\SettingsScript.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Yarn_Related_Scripts\ChatNameChanger.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Yarn_Related_Scripts\ChatSpriteChanger.cs" />
+    <Compile Include="Assets\Stuff_For_Credits\Scripts\Yarn_Related_Scripts\NewMessageAvailableScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\YarnSpinner\Examples\DemoAssets\SimpleExampleScript.yarn.txt" />
     <None Include="Assets\Plugins\YarnSpinner\Examples\DemoAssets\Space\Sally.yarn.txt" />
     <None Include="Assets\Plugins\YarnSpinner\Examples\DemoAssets\Space\Ship.yarn.txt" />
     <None Include="Assets\Plugins\YarnSpinner\README.txt" />
-    <None Include="Assets\Saved_Game_0.xml" />
     <None Include="Assets\StreamingAssets\Login_XML.xml" />
-    <None Include="Assets\StreamingAssets\Mail_Database_XML.xml">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Assets\StreamingAssets\Save_Template_XML.xml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Assets\StreamingAssets\Mail_Database_XML.xml" />
+    <None Include="Assets\StreamingAssets\Save_Template_XML.xml" />
+    <None Include="Assets\StreamingAssets\Settings_XML.xml" />
     <None Include="Assets\Stuff_For_Credits\!license.txt" />
     <None Include="Assets\Stuff_For_Credits\Credits.txt" />
     <None Include="Assets\Stuff_For_Credits\HACKED_readme.txt" />

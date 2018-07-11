@@ -338,10 +338,10 @@
     <None Include="Assets\Plugins\YarnSpinner\Examples\DemoAssets\Space\Sally.yarn.txt" />
     <None Include="Assets\Plugins\YarnSpinner\Examples\DemoAssets\Space\Ship.yarn.txt" />
     <None Include="Assets\Plugins\YarnSpinner\README.txt" />
-    <None Include="Assets\Saved_Game_0.xml" />
     <None Include="Assets\StreamingAssets\Login_XML.xml" />
     <None Include="Assets\StreamingAssets\Mail_Database_XML.xml" />
     <None Include="Assets\StreamingAssets\Save_Template_XML.xml" />
+    <None Include="Assets\StreamingAssets\Settings_XML.xml" />
     <None Include="Assets\Stuff_For_Credits\!license.txt" />
     <None Include="Assets\Stuff_For_Credits\Credits.txt" />
     <None Include="Assets\Stuff_For_Credits\HACKED_readme.txt" />
